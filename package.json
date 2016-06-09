@@ -1,0 +1,10 @@
+{
+  "name": "lift-me-home",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "4.13.4",
+    "body-parser": "1.15.1",
+    "request": "2.72.0",
+    "chai": "3.5.0"
+  }
+}
