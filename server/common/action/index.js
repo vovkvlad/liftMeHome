@@ -1,6 +1,9 @@
 'use strict';
 
 /**
+ *
+ * Action pattern - for execution logic with hidden implementation
+ *
  * How to execute action
  *
  * First variant

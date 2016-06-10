@@ -1,6 +1,7 @@
 "use strict";
 
-exports.asyncCheck = function(done, fn){
+// helper function for executions asynchronous test
+exports.asyncCheck = function (done, fn) {
     try {
         fn();
         done();

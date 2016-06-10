@@ -1,6 +1,6 @@
 var chai = require('chai');
 var expect = chai.expect;
-var asyncCheck = require('common/test').asyncCheck;
+var asyncCheck = require('common/test-helper').asyncCheck;
 
 var actionService = require('./index');
 

@@ -1,6 +1,6 @@
-var config = require('./config');
+var config = require('common/config').services['log'];
 
-var apiServer = require('common/api-server')({
+require('common/api-server')({
     name: config.name,
     routes: require('./routes'),
     port: config.port

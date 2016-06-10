@@ -1,11 +1,9 @@
-function Action() {
+'use strict';
 
-}
-
-Action.prototype = {
-    execute: function () {
+class BaseAction {
+    execute() {
         throw Error('Execute method must be implemented');
     }
-};
+}
 
-module.exports = Action;
+module.exports = BaseAction;
