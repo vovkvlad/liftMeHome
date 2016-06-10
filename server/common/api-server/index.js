@@ -2,7 +2,7 @@ var http = require('http'),
     express = require('express'),
     bodyParser = require('body-parser'),
     HttpError = require('common/errors/httpError'),
-    log = require('common/modules/log');
+    log = require('common/log');
 
 module.exports = function (options) {
     var app = express();
