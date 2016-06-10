@@ -1,5 +1,10 @@
+let logManager = require('../core/log-manager');
+
 module.exports = function (app) {
-    app.get('/log', function (request, response) {
+    app.post('/log', function (request, response, next) {
         response.send({});
+
+        // TODO: need to define effective approach for validation
+        logManager.log(request.body);
     });
 };
