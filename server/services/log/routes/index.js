@@ -1,3 +1,5 @@
+'use strict';
+
 let logManager = require('../core/log-manager');
 
 module.exports = function (app) {
