@@ -14,6 +14,7 @@ const request = require('request');
  * */
 module.exports = function (options) {
     return new Promise(function (resolve, reject) {
+        // TODO use ES6 destruction
         var requestData = {
             url: options.url,
             method: options.method

@@ -1,3 +1,3 @@
-var mongoose = require('mongoose');
+let mongoose = require('mongoose');
 
 module.exports = mongoose.model('Log', require('./log.schema'));
