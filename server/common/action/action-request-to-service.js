@@ -26,7 +26,7 @@ class RequestToService extends RequestAction {
         assert.isString(options.url);
         assert.isString(options.method);
 
-        var serviceConfig = config.services[options.service];
+        var serviceConfig = config.get('services:' + options.service);
 
         assert.isString(serviceConfig.host);
         assert.isNumber(serviceConfig.port);

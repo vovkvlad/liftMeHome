@@ -1,7 +1,6 @@
 'use strict';
 
 let mongoose = require('mongoose');
-let config = require('common/config');
 let log = require('common/log')(module);
 
 exports.initConnection = function (db) {

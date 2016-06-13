@@ -1,33 +1,9 @@
 'use strict';
 
-module.exports = {
-    services: {
-        lift: {
-            host: '127.0.0.1',
-            port: 9101,
-            name: 'lift',
-            description: 'Lift Service'
-        },
-        log: {
-            host: '127.0.0.1',
-            port: 9102,
-            name: 'log',
-            description: 'Log Service',
-            db: {
-                host: '127.0.0.1',
-                post: '27017',
-                name: 'log'
-            }
-        },
-        email: {
-            host: '127.0.0.1',
-            port: 9103,
-            name: 'email',
-            description: 'Email Service'
-        }
-    },
+var nconf = require("nconf");
+var path = require("path");
 
-    actions: {
-        path: '/core/action/actions'
-    }
-};
+nconf.file('main.main', {file: path.join(__dirname, 'main.json')});
+nconf.file('main.secret', {file: path.join(__dirname, 'secret.json')});
+
+module.exports = nconf;

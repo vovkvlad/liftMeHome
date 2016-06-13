@@ -61,10 +61,8 @@ function execute(name, data) {
 
 // add actions from all services
 function initServiceActions() {
-    for (var service in config.services) {
-        var serviceName = config.services[service].name;
-
-        var pathToActions = path.join(__dirname, "../../services/" + serviceName + config.actions.path);
+    for (var service in config.get('services')) {
+        var pathToActions = path.join(__dirname, "../../services/" + config.get('services:' + service).name + config.get('actions:path'));
 
         try {
             var stats = fs.lstatSync(pathToActions);

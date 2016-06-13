@@ -1,14 +1,14 @@
 var chai = require('chai');
 var expect = chai.expect;
 let asyncCheck = require('common/test-helper').asyncCheck;
-let config = require('common/config');
+let logConfig = require('services/log/config');
 
 var actionService = require('common/action');
 
 describe('Test Log API', function () {
     before(function (done) {
         // database connection
-        require('common/db').initConnection(config.services.log.db).then(function () {
+        require('common/db').initConnection(logConfig.get('db')).then(function () {
             done();
         });
     });
