@@ -23,14 +23,15 @@ module.exports = function (options) {
         // serialize data if method is POST or PUT
         if ((options.method === 'POST' || options.method === 'PUT') && options.data) {
             requestData.json = true;
-            requestData.body = JSON.stringify(options.data);
+            requestData.body = options.data;
+            //requestData.body = JSON.stringify(options.data);
         }
 
         request(requestData, function (error, response, body) {
             if (error) {
                 reject({
                     status: 500,
-                    message: 'Cannot find host'
+                    message: 'Cannot execute request'
                 });
             } else if (response.statusCode != 200) {
                 reject({

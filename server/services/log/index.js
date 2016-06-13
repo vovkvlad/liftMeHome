@@ -5,3 +5,7 @@ require('common/api-server')({
     routes: require('./routes'),
     port: config.port
 });
+
+require('common/db').initConnection(config.db);
+
+require('common/action');

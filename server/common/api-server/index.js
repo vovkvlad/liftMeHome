@@ -16,7 +16,7 @@ module.exports = function (options) {
 
     app.use(require("common/middlewares/sendHttpError"));
 
-    app.use(function (err, req, response, next) {
+    app.use(function (err, request, response, next) {
         if (typeof err == "number") {
             err = new HttpError(err);
         } else if (err instanceof HttpError) {
@@ -30,7 +30,7 @@ module.exports = function (options) {
 
     http.createServer(app).listen(options.port);
 
-    log.log(options.name + ' listening ' + options.port + ' port.');
+    log.info(options.name + ' listening ' + options.port + ' port.');
 
     return app;
 };

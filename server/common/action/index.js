@@ -15,7 +15,10 @@
  * */
 
 const _ = require('lodash');
+const config = require('common/config');
 const assert = require('chai').assert;
+const fs = require("fs");
+const path = require("path");
 
 let actionDescriptors = [];
 
@@ -56,9 +59,33 @@ function execute(name, data) {
     return getAction(name).execute(data);
 }
 
+// add actions from all services
+function initServiceActions() {
+    for (var service in config.services) {
+        var serviceName = config.services[service].name;
+
+        var pathToActions = path.join(__dirname, "../../services/" + serviceName + config.actions.path);
+
+        try {
+            var stats = fs.lstatSync(pathToActions);
+
+            // Is it a directory?
+            if (stats.isDirectory()) {
+                fs.readdirSync(pathToActions).forEach(function (file) {
+                    require(pathToActions + '/' + file);
+                });
+            }
+        }
+        catch (e) {
+        }
+    }
+}
+
 exports.execute = execute;
 exports.getAction = getAction;
 exports.registerAction = registerAction;
 exports.getActionDescriptor = getActionDescriptor;
 exports.getActionDescriptors = getActionDescriptors;
 exports.deleteAllActionDescriptors = deleteAllActionDescriptors;
+
+initServiceActions();

@@ -2,7 +2,7 @@ var chai = require('chai');
 var expect = chai.expect;
 var asyncCheck = require('common/test-helper').asyncCheck;
 
-var promiseRequest = require('./index');
+var promiseRequest = require('common/request-promise');
 
 describe('Request Promise Module', function () {
     it('should execute GET request and return body, response ', function (done) {

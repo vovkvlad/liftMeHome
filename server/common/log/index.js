@@ -5,8 +5,21 @@ class Logger {
         this.module = module;
     }
 
-    log(message) {
+    error(message) {
+        console.error(message);
+    }
+
+    info(message) {
         console.log(message);
+    }
+
+    // only should be visible on development mode
+    debug(message) {
+        console.debug(message);
+    }
+
+    warning(message) {
+        console.warn(message);
     }
 }
 

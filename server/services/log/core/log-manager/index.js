@@ -1,11 +1,31 @@
-const LogModel = require('../models/log.model');
-const logger = require('common/log')(module);
+'use strict';
 
-exports.log = function (data) {
-    logger.log(data.type);
-    logger.log(data.message);
-
-    // TODO: need to define how return promise with Mongoose Model
-    var log = new LogModel(data);
-    return log.save();
+var logModels = {
+    1: require('../model/base-log-model'),
+    2: require('../model/message-log-model')
 };
+
+const logger = require('common/log')(module);
+let _ = require('lodash');
+
+function save(data) {
+    var LogModel = getModel(data.code);
+    var model = new LogModel(data);
+
+    return model.save();
+}
+
+function getModel(code) {
+    return logModels[code];
+}
+
+function isValid(data) {
+    var LogModel = getModel(data.code);
+
+    if (LogModel) {
+        return LogModel.isValid(data);
+    }
+}
+
+exports.save = save;
+exports.isValid = isValid;

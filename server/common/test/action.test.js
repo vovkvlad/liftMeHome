@@ -2,7 +2,7 @@ var chai = require('chai');
 var expect = chai.expect;
 var asyncCheck = require('common/test-helper').asyncCheck;
 
-var actionService = require('./index');
+var actionService = require('common/action');
 
 var validActionDescriptor = {
     name: 'test',
@@ -16,7 +16,6 @@ var validActionDescriptor = {
 };
 
 describe('Action Module', function () {
-
     afterEach(function () {
         actionService.deleteAllActionDescriptors();
     });

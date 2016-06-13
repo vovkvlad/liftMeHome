@@ -1,12 +1,19 @@
 'use strict';
 
 let logManager = require('../core/log-manager');
+let HttpError = require('common/errors/httpError');
+let _ = require('lodash');
 
 module.exports = function (app) {
     app.post('/log', function (request, response, next) {
-        response.send({});
+        var logData = _.pick(request.body, ['code', 'type', 'message', 'data']);
 
-        // TODO: need to define effective approach for validation
-        logManager.log(request.body);
+        if (logManager.isValid(logData)) {
+            logManager.save(logData);
+
+            response.send({});
+        } else {
+            next(new HttpError(400, 'Log data invalid'));
+        }
     });
 };
