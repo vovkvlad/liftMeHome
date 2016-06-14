@@ -1,6 +1,5 @@
-var chai = require('chai');
-var expect = chai.expect;
-let asyncCheck = require('common/test-helper').asyncCheck;
+'use strict';
+
 let logConfig = require('services/log/config');
 
 var actionService = require('common/action');

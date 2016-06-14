@@ -1,7 +1,8 @@
-var chai = require('chai');
-var expect = chai.expect;
+'use strict';
 
-var log = require('common/log')(module);
+let expect = require('chai').expect;
+
+let log = require('common/log')(module);
 
 describe('Log Module', function () {
     it('should exist log method', function () {

@@ -1,8 +1,8 @@
-var chai = require('chai');
-var expect = chai.expect;
-var asyncCheck = require('common/test-helper').asyncCheck;
+'use strict';
 
-var BaseLog = require('services/log/core/model/base-log-model');
+var expect = require('chai').expect;
+
+var BaseLog = require('./base-log-model');
 
 describe('Base Log Model', function () {
     it('should exist base methods', function () {

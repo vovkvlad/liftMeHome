@@ -1,8 +1,9 @@
-var chai = require('chai');
-var expect = chai.expect;
-var asyncCheck = require('common/test-helper').asyncCheck;
+'use strict';
 
-var promiseRequest = require('common/request-promise');
+let expect = require('chai').expect;
+let asyncCheck = require('common/test-helper').asyncCheck;
+
+let promiseRequest = require('./index');
 
 describe('Request Promise Module', function () {
     it('should execute GET request and return body, response ', function (done) {

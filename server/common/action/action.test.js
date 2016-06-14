@@ -1,10 +1,11 @@
-var chai = require('chai');
-var expect = chai.expect;
-var asyncCheck = require('common/test-helper').asyncCheck;
+'use strict';
 
-var actionService = require('common/action');
+let expect = require('chai').expect;
+let asyncCheck = require('common/test-helper').asyncCheck;
 
-var validActionDescriptor = {
+let actionService = require('common/action');
+
+let validActionDescriptor = {
     name: 'test',
     action: function () {
         this.execute = function () {

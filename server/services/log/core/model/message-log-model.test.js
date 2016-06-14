@@ -1,8 +1,7 @@
-var chai = require('chai');
-var expect = chai.expect;
-var asyncCheck = require('common/test-helper').asyncCheck;
+'use strict';
 
-var MessageLog = require('services/log/core/model/message-log-model');
+let expect = require('chai').expect;
+let MessageLog = require('services/log/core/model/message-log-model');
 
 describe('Message Log Model', function () {
     it('should validate log', function () {
