@@ -16,7 +16,7 @@ describe('Test Log API', function () {
         actionService.execute('message.log', {
             message: 'Test'
         }).then(function () {
-            done()
+            done();
         }, function (err) {
             done(err.message);
         });

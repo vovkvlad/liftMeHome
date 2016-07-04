@@ -1,3 +1,5 @@
+'use strict';
+
 var mainConfig = require('common/config');
 let logConfig = require('./config');
 
