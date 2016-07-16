@@ -1,12 +1,12 @@
 'use strict';
 
-let mainConfig = require('common/config'),
-    liftConfig = require('./config');
+var mainConfig = require('common/config');
+let liftConfig = require('./config');
 
 require('common/api-server')({
-    name: mainConfig('services:lift:name'),
+    name: mainConfig.get('services:lift:name'),
     routes: require('./routes'),
-    port: mainConfig('services:lift:port')
+    port: mainConfig.get('services:lift:port')
 });
 
 require('common/db').initConnection({

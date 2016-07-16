@@ -1,3 +1,5 @@
+'use strict';
+
 let nconf = require("nconf"),
     config = new nconf.Provider(),
     path = require("path"),
@@ -12,3 +14,7 @@ if ((NODE_ENV == 'development')) {
 } else if (NODE_ENV == 'production') {
     configFile = 'production.json'
 }
+
+config.file('lift.config', {file: path.join(__dirname, configFile)});
+
+module.exports = config;
