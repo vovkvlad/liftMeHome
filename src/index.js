@@ -19,7 +19,7 @@ require('mue-core/modules/api-server')({
 
     init: function (app) {
         // initialize routes
-        require('./routes')(app);
+        require('./routes/index')(app);
 
         console.log('On init callback');
     },

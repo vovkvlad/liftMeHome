@@ -2,7 +2,7 @@
 
 let mongoose = require('mongoose');
 
-let userSchema = require('./user.schema.js');
+let userSchema = require('../user/user.schema.js');
 
 let Schema = mongoose.Schema,
     ObjectId = mongoose.Schema.Types.ObjectId;
