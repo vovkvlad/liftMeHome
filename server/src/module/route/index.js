@@ -1,0 +1,1 @@
+exports.Route = require('./route.model.js');
