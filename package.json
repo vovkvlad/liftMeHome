@@ -8,6 +8,7 @@
     "lodash": "^4.13.1",
     "mocha": "^2.5.3",
     "mongoose": "^4.4.20",
+    "mue-core": "git+https://github.com/mueees/mue-core.git",
     "nconf": "^0.8.4",
     "request": "2.72.0"
   }
