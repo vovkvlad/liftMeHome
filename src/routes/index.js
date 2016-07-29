@@ -27,7 +27,7 @@ module.exports = function (app) {
             });
     });
 
-    app.get(API_PREFIX + '/user:id', function (request, response, next) {
+    app.get(API_PREFIX + '/user/:id', function (request, response, next) {
         User.findById(request.params.id).then(function (foundUser) {
                 response.send(foundUser);
             },
@@ -36,7 +36,7 @@ module.exports = function (app) {
             });
     });
 
-    app.post(API_Prefix + '/user', function (request, response, next) {
+    app.post(API_PREFIX + '/user', function (request, response, next) {
         User.create(request.body).then(function (user) {
                 response.send({ _id: user._id });
             },
@@ -45,7 +45,7 @@ module.exports = function (app) {
             });
     });
 
-    app.put(API_PREFIX + '/user"id', function (request, response, next) {
+    app.put(API_PREFIX + '/user/:id', function (request, response, next) {
         User.update({ _id: request.params.id }, request.body).then(function () {
                 response.send();
             },
@@ -54,7 +54,7 @@ module.exports = function (app) {
             });
     });
 
-    app.delete(API_PREFIX + '/user:id', function (request, response, next) {
+    app.delete(API_PREFIX + '/user/:id', function (request, response, next) {
         User.remove({ _id: request.params.id }).then(function () {
                 response.send();
             },
